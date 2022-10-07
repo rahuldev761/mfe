@@ -1,5 +1,4 @@
 const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const commonConfig = require("./webpack.common");
 /* 
  The ModuleFederationPlugin allows a build to provide or consume modules with other
@@ -24,9 +23,6 @@ const devConfig = {
       },
        // shared: ["react", "react-dom"],
       shared: packageJson.dependencies, //this is for experiment
-    }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
     }),
   ],
 };
