@@ -5,10 +5,10 @@ import MarketingApp from "./components/MarketingApp";
 export default () => {
   return (
     <BrowserRouter>
-      <div>
+      <>
         <Header />
         <MarketingApp />
-      </div>
+      </>
     </BrowserRouter>
   );
 };
