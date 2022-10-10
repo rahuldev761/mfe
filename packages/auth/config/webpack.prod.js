@@ -9,17 +9,14 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: '/marketing/latest/'
-  },
-  output:{
-    publicPath: 'http://localhost:8081/'
+    publicPath: '/auth/latest/'
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "marketing",
+      name: "auth",
       filename: "remoteEntry.js",
       exposes: {
-        "./MarketingApp": "./src/index",
+        "./AuthApp": "./src/bootstrap",
       },
       // shared: ["react", "react-dom"], // we can do this also
       shared: packageJson.dependencies, // this is for experiment

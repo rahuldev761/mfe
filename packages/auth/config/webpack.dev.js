@@ -11,20 +11,24 @@ const packageJson = require('../package.json');
 const devConfig = {
   mode: "development",
   devServer: {
-    port: 8081,
+    port: 8082,
     historyApiFallback: {
       index: "/index.html",
     },
+   
+  },
+  output:{
+    publicPath: 'http://localhost:8082/'
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
     new ModuleFederationPlugin({
-      name: "marketing",
+      name: "auth",
       filename: "remoteEntry.js",
       exposes: {
-        "./MarketingApp": "./src/index",
+        "./AuthApp": "./src/bootstrap",
       },
       // shared: ["react", "react-dom"],
       // shared: packageJson.dependencies, // this is for experiment
