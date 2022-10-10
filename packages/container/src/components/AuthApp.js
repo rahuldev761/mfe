@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 export default ({onSignIn}) => {
   const ref = useRef(null);
-  // copy of browser history
+  // copy of browser history !
   const history = useHistory();
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default ({onSignIn}) => {
       },
       onSignIn,
     });
+    
     history.listen(onParentNavigate);
   }, []);
 
