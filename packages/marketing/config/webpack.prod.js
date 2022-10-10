@@ -11,9 +11,6 @@ const prodConfig = {
     filename: "[name].[contenthash].js",
     publicPath: '/marketing/latest/'
   },
-  output:{
-    publicPath: 'http://localhost:8081/'
-  },
   plugins: [
     new ModuleFederationPlugin({
       name: "marketing",
